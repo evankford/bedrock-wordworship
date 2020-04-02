@@ -1,0 +1,62 @@
+.respimg__wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: auto;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  &.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      font-family: "object-fit: cover";
+      object-fit: cover;
+    }
+  }
+
+  &.rellax-bg {
+    top: -6vh !important;
+    height: calc(100% + 10vh) !important;
+  }
+}
+
+.vidimg-outer {
+  @extend %psuedo;
+}
+
+.rellax {
+  position: relative;
+  z-index: 0;
+
+  &.background {
+    position: absolute !important;
+
+    & > .rellax-img {
+      position: absolute;
+    }
+  }
+
+  & > .rellax-img {
+    // position: absolute;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}

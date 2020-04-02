@@ -1,0 +1,33 @@
+@import "~basiclightbox/dist/basicLightbox.min.css";
+
+.basicLightbox {
+  z-index: 10001;
+
+  &__placeholder {
+    width: 80%;
+
+    @include media-query($small) {
+      width: 95%;
+    }
+  }
+
+  .iframe-wrap {
+    position: relative;
+    display: block;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      width: 100%;
+      padding-bottom: 55%;
+    }
+
+    iframe {
+      @extend %psuedoish;
+    }
+  }
+}

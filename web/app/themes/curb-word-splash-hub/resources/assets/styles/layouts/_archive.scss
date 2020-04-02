@@ -1,0 +1,21 @@
+.archive {
+  &.post-type-archive-artist {
+    main.main {
+      min-height: calc(100vh - 200px);
+    }
+  }
+
+  main.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: $spacing-medium;
+  }
+}
+
+.page:not(.front-page) {
+  .front-main__background {
+    opacity: 0.65;
+  }
+}

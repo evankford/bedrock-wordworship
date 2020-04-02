@@ -1,0 +1,9 @@
+body {
+  --color-background: #{$color-body};
+  --color-text: #{$color-body-text};
+
+  background: $color-body;
+  background-color: var(--color-background);
+  color: $color-body-text;
+  color: var(--color-text);
+}

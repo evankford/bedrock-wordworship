@@ -1,0 +1,10 @@
+.rte {
+  //base font size?
+  font-size: 18px;
+  margin: $spacing-small auto;
+  max-width: 45em;
+
+  @include media-query($small) {
+    font-size: 17px;
+  }
+}

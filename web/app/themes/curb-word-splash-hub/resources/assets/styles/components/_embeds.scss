@@ -1,0 +1,28 @@
+.section-content__embed {
+  width: 100%;
+  max-width: 800px;
+  margin: $spacing-medium auto;
+
+  &.size--small {
+    width: 80%;
+    max-width: 550px;
+  }
+
+  &.size--full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.type--video {
+    .embed-wrap {
+      &::before {
+        content: "";
+        padding-bottom: 56%;
+      }
+
+      iframe {
+        @extend %psuedoish;
+      }
+    }
+  }
+}

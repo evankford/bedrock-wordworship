@@ -1,0 +1,57 @@
+.page-header {
+  flex: 1 1 100%;
+  text-align: center;
+  position: static;
+  // overflow: hidden;
+  margin: -8px 0;
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient($color-accent-inverse, $color-accent-lightest);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__image {
+    position: relative;
+    z-index: 0;
+    margin-bottom: -40%;
+    min-height: calc(60vh + 200px);
+
+    @include media-query($medium-down) {
+      margin-bottom: -60vh;
+    }
+
+    .respimg__wrapper {
+      min-height: 500px;
+
+      img {
+        @include object-fit();
+
+        height: 100%;
+      }
+    }
+  }
+}
+
+.single-artist {
+  .page-header__image {
+    picture {
+      // position: relative;
+
+      &::after {
+        @extend %psuedo;
+
+        //BUGFIXtop: 0
+        top: auto;
+        bottom: 0;
+        height: 90%;
+        background: linear-gradient(to bottom, transparent, var(--color-background));
+        z-index: 100;
+      }
+    }
+  }
+}

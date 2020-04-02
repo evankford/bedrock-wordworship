@@ -1,0 +1,33 @@
+nav.nav-primary {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: $spacing-small;
+
+      @include media-query($small) {
+        margin: 0 $spacing-min;
+      }
+    }
+
+    a {
+      padding: $spacing-min;
+      font-family: $font-heading;
+      color: $color-accent-lighter;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: $font-size-menu;
+      display: inline-block;
+      position: relative;
+
+      @include hoverLink();
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.artist-header {
+  display: block;
+  position: relative;
+  min-height: calc(70vh + 150px);
+
+  &__background {
+    @include content-background();
+  }
+
+  &__content {
+    @include content-content();
+
+    max-width: 100%;
+    padding: $spacing-small;
+
+    &::before {
+      @extend %psuedo;
+
+      height: 300px;
+      background: linear-gradient(to top, transparent, rgba(black, 0.35));
+    }
+  }
+
+  .header-content-inner {
+    padding: 1vw 2vw;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 20;
+    max-width: 280px;
+    max-height: 100px;
+
+    img {
+      @include object-fit(contain);
+
+      object-position: 0 0;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.downloader {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 110;
+  background: rgba(black, 0.59);
+  border-radius: $border-radius-big;
+  padding: 0 5px;
+  text-transform: uppercase;
+  color: white;
+  overflow: hidden;
+  max-width: 240px;
+  opacity: 0.75;
+  transition: opacity 300ms $ease;
+
+  .vidbox & {
+    bottom: unset;
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+    min-width: 0;
+    max-width: 180px;
+    padding: 0;
+    margin: 5px;
+  }
+
+  &::after {
+    @extend %psuedo;
+
+    height: 2px;
+    bottom: 0;
+    top: auto;
+    top: unset;
+    background: white;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include media-query($medium-up) {
+    right: 2%;
+    left: auto;
+    left: unset;
+    transform: translateX(0);
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: none;
+    overflow: visible;
+    position: relative;
+    transition: transform 300ms $ease;
+
+    & > div {
+      flex: 0 0 100%;
+      text-align: center;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include font-heading();
+
+  a,
+  .button {
+    appearance: none;
+    color: white !important;
+    text-decoration: none;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.1;
+    font-size: 15px;
+    border: none;
+    margin: 5px;
+    flex: 0 0 auto;
+    transition: all 300ms $ease;
+    cursor: pointer;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+      color: var(--color-accent) !important;
+    }
+  }
+
+  .button {
+    margin: 0 5px;
+  }
+
+  &.progressed {
+    &::after {
+      opacity: 0.5;
+      transition: transform 10000ms linear;
+      transform: scaleX(1);
+    }
+
+    .downloader__inner {
+      transform: translateX(-100%);
+    }
+  }
+}

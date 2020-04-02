@@ -1,0 +1,55 @@
+footer.content-info {
+  color: white;
+  background: var(--color-background);
+  padding: 0 $spacing-medium $spacing-medium;
+  position: relative;
+  z-index: 2000;
+
+  &.curb-branding {
+    background: linear-gradient(180deg, $color-body 0%, #151837 41%, #1b1f51 100%);
+  }
+}
+
+.site-footer {
+  &__main {
+    max-width: $grid-max-width;
+    margin: auto;
+  }
+
+  .footer-logo {
+    width: 80%;
+    max-width: 500px;
+    margin: $spacing-medium auto;
+    position: relative;
+
+    @include hoverLink();
+  }
+
+  &__super {
+    font-size: 0.9em;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: $spacing-medium;
+
+    p,
+    ul.menu {
+      display: inline-block;
+      padding: 0;
+    }
+
+    ul.menu {
+      list-style: none;
+
+      li {
+        display: inline-block;
+
+        a {
+          color: inherit;
+          padding: $spacing-min;
+          margin: $spacing-min;
+        }
+      }
+    }
+  }
+}
+

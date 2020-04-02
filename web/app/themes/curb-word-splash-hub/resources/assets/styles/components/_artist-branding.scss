@@ -1,0 +1,50 @@
+.footer-branding {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  max-width: $grid-medium;
+  margin: $spacing-medium auto;
+
+  a.brand {
+    flex: 1 1 200px;
+    max-width: 250px;
+  }
+
+  .site-header__wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .site-header__brand {
+    display: block;
+    margin: auto;
+    text-align: center;
+
+    a.brand {
+      display: inline-block;
+      width: 100%;
+      margin: $spacing-small auto;
+
+      .respimg__wrapper {
+        max-height: 150px;
+
+        img {
+          object-position: 50% 50%;
+        }
+      }
+    }
+
+    ul {
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+
+  .site-header__links {
+    display: block;
+    flex: 1 1 50%;
+    margin: $spacing-small;
+    text-align: center;
+  }
+}

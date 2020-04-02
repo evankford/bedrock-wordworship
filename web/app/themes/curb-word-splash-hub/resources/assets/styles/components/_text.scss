@@ -1,0 +1,12 @@
+.text-content {
+  .title {
+    font-family: var(--font-extra);
+    font-weight: var(--font-weight-extra);
+    font-style: var(--font-style-extra);
+    margin: 0.1em auto;
+  }
+
+  .button-wrap {
+    margin: $spacing-small auto 0;
+  }
+}

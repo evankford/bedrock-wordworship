@@ -1,0 +1,204 @@
+/**
+ * Sets a media query for the specified breakpoint
+ *
+ * Accepts:
+ * - $media-query: {String} Breakpoint variable (list found in variables.scss)
+ *
+ * Usage:
+ * .selector {
+ *   @include media-query($medium-up) {
+ *     color: red;
+ *   }
+ * }
+ */
+
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin visually-hidden() {
+  // stylelint-disable-next-line
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+/**
+ * Reverse the properties applied by @mixin visually-hidden
+ *
+ * Accepts:
+ * - $position: {String} Positioning method for element
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-shown(relative);
+ * }
+ */
+@mixin visually-shown($position: inherit) {
+  // stylelint-disable-next-line
+  position: $position !important;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}
+
+@mixin transition($transitions...) {
+  $output: ();
+
+  @each $transition in $transitions {
+    $output: append($output, get-transition-properties($transition), comma);
+  }
+
+  transition: $output;
+}
+
+// Font mixins
+// @mixin font-script() {
+//   font-family: $font-script;
+//   font-weight: 400;
+//   text-transform: none !important;
+//   letter-spacing: 0em;
+// }
+
+@mixin font-extra($extraweight: $font-extra-weight) {
+  // font-family: $font-extra;
+  // font-weight: $extraweight;
+  // font-style: $font-extra-style;
+  font-family: var(--font-family-extra);
+  font-weight: var(--font-weight-extra);
+  font-style: var(--font-style-extra);
+  // text-transform: uppercase;
+  // letter-spacing: 0;
+  // line-height: 1em;
+}
+
+@mixin font-heading($headingweight: $font-heading-weight) {
+  // font-family: $font-heading;
+  // font-weight: $headingweight;
+  // font-style: $font-heading-style;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-style: var(--font-style-heading);
+}
+
+@mixin font-body($bodyweight: $font-body-weight) {
+  // font-family: $font-body;
+  // font-weight: $bodyweight;
+  // font-style: $font-body-style;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+}
+
+@mixin shadowBefore($startingScale: 0.95, $endingScale: 0.99, $shadowColor: rgba(0,0,0,0.14)) {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  transition: transform 400ms $ease, opacity 400ms $ease !important;
+  backface-visibility: visible;
+  transform: perspective(100px) translate3d(0, 0, 0);
+
+  &::before {
+    @extend %psuedo;
+
+    position: absolute;
+    z-index: 0;
+    opacity: 0.5;
+    transition: transform 400ms $ease, opacity 400ms $ease;
+    background: transparent;
+    top: -3px;
+    box-shadow: 4px 9px 18px $shadowColor;
+    transform: scale($startingScale);
+  }
+
+  &::after {
+    @extend %psuedo;
+
+    z-index: 1;
+    background: var(--color-card-bg);
+  }
+
+  &:hover {
+    transform: perspective(100px) translate3d(0, -2px, 2px);
+
+    &::before {
+      opacity: 1;
+      transform: scale($endingScale) translate3d(0, 3px, -2px);
+    }
+  }
+}
+
+@mixin content-background($opacity: 1, $hoverEffect: false) {
+  @extend %psuedo;
+
+  z-index: 0;
+  background-size: cover;
+  opacity: $opacity;
+  overflow: hidden;
+
+  picture.bg,
+  .bg {
+    @extend %psuedo;
+
+    position: absolute;
+  }
+}
+
+@mixin content-content($hoverEffect: false, $maxWidth: $grid-max-width) {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  max-width: $maxWidth;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin object-fit($style: cover, $position: 50% 50%) {
+  object-fit: $style;
+  object-position: $position;
+  font-family: "object-fit: #{$style}; object-position: #{$position};";
+}
+
+@mixin hoverLink($startOp: 0.8, $endOp: 1, $transformVal: -2px) {
+  //Needs Display inline-block and position != static
+  transition: transform 280ms $ease, opacity 280ms $ease;
+  opacity: $startOp;
+
+  &:hover {
+    transform: translateY($transformVal);
+    opacity: $endOp;
+  }
+}
+
+@mixin container($style: "flex", $spacing: $spacing-small) {
+  padding: $spacing;
+  max-width: $grid-max-width;
+  width: 100%;
+  margin: auto;
+
+  @if $style == "flex" {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

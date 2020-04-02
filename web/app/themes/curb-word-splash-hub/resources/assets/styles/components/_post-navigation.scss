@@ -1,0 +1,16 @@
+.post-navigation {
+  margin: $spacing-large auto;
+  text-align: center;
+
+  a {
+    color: inherit;
+    font-family: $font-heading;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin: $spacing-medium;
+
+    @include hoverLink();
+  }
+}

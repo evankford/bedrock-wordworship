@@ -1,0 +1,192 @@
+//Spacer for general use
+$spacer: 2px;
+
+//Borders
+$border-radius: 2px;
+$border-thickness: 1px;
+$border-thickness-big: 3px;
+$border-radius-small: 4px;
+$border-radius-big: 12px;
+
+// Text colors
+$color-body-text: #fafaff;
+$color-body-text-trans: #fafaffcc;
+$color-drawer-text: $color-body-text;
+
+// Background colors
+$color-body: #131633;
+$color-body-trans: #131633aa;
+$color-drawer-bg: $color-body;
+
+//Drawers
+$color-drawer-button-text: $color-body-text;
+$color-drawer-button-background: $color-body;
+
+//Borders
+$color-border: lighten($color_body_text, 30%);
+$color-border-darker: $color-body-text;
+
+//Cards
+$color-card-bg: white;
+$color-card-text: $color-body-text;
+
+// Accent Color
+$color-accent: #008ed2;
+$color-accent-inverse: white;
+$color-accent-lighter: lighten($color-accent, 15%);
+$color-accent-lightest: lighten($color-accent, 35%);
+$color-accent-downplay: desaturate($color_accent, 35%);
+$color-accent-darker: darken($color-accent, 15%);
+$color-accent-darkest: darken($color-accent, 35%);
+$color-accent-trans: rgba($color-accent, 0.5);
+$color-body-link: $color-accent;
+
+// Secondary Color
+$color-secondary: #008ed2;
+$color-secondary-inverse: white;
+$color-secondary-lighter: lighten($color-secondary, 25%);
+$color-secondary-lightest: lighten($color-secondary, 55%);
+$color-secondary-downplay: desaturate($color_secondary, 35%);
+$color-secondary-darker: darken($color-secondary, 15%);
+$color-secondary-darkest: darken($color-secondary, 35%);
+$color-secondary-trans: rgba($color-secondary, 0.5);
+
+// Helper colors for form error states
+$color-disabled: #333;
+$color-disabled-border: #333;
+$color-error: #ff6d6d;
+$color-alert: #b3a32a;
+$color-success: #35b32a;
+$color-notification-text: white;
+
+// Typography
+$font-heading: "Krona One", sans-serif;
+$font-extra: "Krona One", sans-serif;
+$font-script: "Krona One", sans-serif;
+$font-body: "Poppins", sans-serif;
+
+$font-heading-weight: 400;
+$font-heading-style: normal;
+$font-heading-bold-weight: 700;
+$font-extra-weight: 900;
+$font-extra-style: normal;
+$font-extra-bold-weight: 900;
+$font-body-weight: 400;
+$font-body-style: normal;
+$font-body-bold-weight: 700;
+$font-body-light-weight: 200;
+
+// Transitions
+$transition-duration: 250ms;
+$transition-timing: ease-in-out;
+
+// Grid
+$grid-tiny: 510px;
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1280px;
+$grid-max-width: 1400px;
+$grid-gutter: 30px;
+
+// Breakpoints used with the media-query mixin
+$tiny: "tiny";
+$small: "small";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
+
+$breakpoints: (
+  $tiny "(max-width: #{$grid-tiny - 1})",
+  $small "(max-width: #{$grid-medium - 1})",
+  $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+  $medium-down "(max-width: #{$grid-large - 1})",
+  $medium-up "(min-width: #{$grid-medium})",
+  $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+  $large-down "(max-width: #{$grid-widescreen - 1})",
+  $large-up "(min-width: #{$grid-large})",
+  $widescreen "(min-width: #{$grid-widescreen})"
+);
+
+$ease: cubic-bezier(0.77, 0, 0.175, 1);
+
+%psuedoish {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+%psuedo {
+  @extend %psuedoish;
+
+  content: "";
+}
+
+%hover {
+  transition: transform 300ms $ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+%standard-width {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $grid-max-width;
+}
+
+$spacing-min: 3px;
+$spacing-tiny: calc(4px + 0.12vw);
+$spacing-small: calc(8px + 0.4vw);
+$spacing-medium: calc(12px + 0.6vw);
+$spacing-large: calc(20px + 0.9vw);
+$spacing-huge: calc(30px + 1.2vw);
+$spacing-max: calc(45px + 2vw);
+
+$spacing-min-inverse: -3px;
+$spacing-tiny-inverse: calc(-4px - 0.12vw);
+$spacing-small-inverse: calc(-8px - 0.4vw);
+$spacing-medium-inverse: calc(-12px - 0.6vw);
+$spacing-large-inverse: calc(-20px - 0.9vw);
+$spacing-huge-inverse: calc(-30px - 1.2vw);
+$spacing-max-inverse: calc(-45px - 2vw);
+
+$font-size-menu:  calc(12px + 0.25vw);
+
+body {
+  --font-family: #{$font-body};
+  --font-weight: #{$font-body-weight};
+  --font-style: #{$font-body-style};
+  --font-family-heading: #{$font-heading};
+  --font-weight-heading: #{$font-heading-weight};
+  --font-style-heading: #{$font-heading-style};
+  --font-family-extra: #{$font-extra};
+  --font-weight-extra: #{$font-extra-weight};
+  --font-style-extra: #{$font-extra-style};
+
+  /* Colors */
+  --color-body: #{$color-body};
+  --color-body-text: #{$color-body-text};
+  --color-body-text-trans: #{$color-body-text-trans};
+
+  /* Accents */
+  --color-accent: #{$color-accent};
+  --color-accent-inverse: #{$color-accent-inverse};
+  --color-accent-lighter: #{$color-accent-lighter};
+  --color-accent-lightest: #{$color-accent-lightest};
+  --color-accent-downplay: #{$color-accent-downplay};
+  --color-accent-darker: #{$color-accent-darker};
+  --color-accent-darkest: #{$color-accent-darkest};
+  --color-accent-trans: #{$color-accent-trans};
+  --color-body-link: #{$color-body-link};
+}

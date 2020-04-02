@@ -1,0 +1,239 @@
+// TODO: .banner .nav li {}
+// TODO: .banner .nav a {}
+
+$topSpace: 160px;
+
+header.banner {
+  //Headroom rules
+  // overflow: hidden;
+
+  &::after {
+    @extend %psuedo;
+
+    z-index: 1;
+    opacity: 0.5;
+    background: linear-gradient(to top, transparent, rgba(black, 0.75));
+    transition: opacity 240ms ease;
+    height: 150%;
+    // box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
+
+  &.headroom {
+    background-color: transparent !important;
+    transition: transform 200ms linear;
+
+    &::before {
+      @extend %psuedo;
+
+      background-color: $color-body;
+      background-color: var(--color-background);
+      color: var(--color-text);
+      transition: opacity 200ms linear;
+      opacity: 0;
+      z-index: 2;
+    }
+  }
+
+  &.headroom--top {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.headroom--not-top {
+    transform: translateY(-100%);
+  }
+
+  &.headroom--pinned.headroom--not-top {
+    // animation: getitin 240ms linear;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
+    transform: translateY(0%);
+
+    &::before {
+      opacity: 0.9;
+    }
+
+    &.box-shadow {
+      box-shadow: 0 0 15px rgba(black, 0.08);
+    }
+  }
+
+  &.headroom--unpinned.headroom--not-top {
+    // animation: getitout 240ms linear;
+    // animation-fill-mode: none;
+    // animation-iteration-count: 1;
+    transform: translateY(-100%);
+  }
+
+  & + .wrap.container {
+    padding-top: $topSpace;
+
+    & > .content {
+      margin-top: -$topSpace;
+
+      & > main {
+        padding-top: 0;
+      }
+
+      .page-header {
+        margin-top: -8px;
+        padding-top: $topSpace;
+      }
+
+      .page-header__image {
+        margin-top: -$topSpace;
+
+        & + h1 {
+          margin-top: $topSpace;
+        }
+      }
+    }
+  }
+}
+
+@keyframes getitin {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes getitout {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.site-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__wrap {
+    @include container();
+
+    padding: $spacing-tiny;
+    z-index: 20;
+    position: relative;
+    justify-content: space-between;
+
+    @include media-query($small) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__brand {
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 $spacing-small;
+    position: relative;
+    z-index: 1;
+
+    a.brand {
+      flex: 1 5 200px;
+      max-width: 300px;
+      transform: scale(1);
+      transition: transform 200ms linear;
+
+      .respimg__wrapper {
+        max-height: 60px;
+
+        &::before {
+          @include media-query($small) {
+            padding-bottom: 60px;
+          }
+        }
+      }
+
+      img {
+        @include object-fit(contain);
+
+        height: 100%;
+        object-position: 0 0;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        transition: max-height 200ms linear;
+        max-height: 9px;
+        width: 100%;
+        height: 9px;
+
+        @include media-query($tiny) {
+          max-height: 5px;
+        }
+      }
+
+      .banner.headroom--not-top & {
+        transform: scale(0.9);
+
+        &::before,
+        &::after {
+          max-height: 0;
+        }
+      }
+      // width: 100%;
+    }
+
+    ul.social-wrap {
+      margin: $spacing-min $spacing-medium;
+      text-align-last: left;
+    }
+
+    @include media-query($medium-down) {
+      // justify-content: center;
+    }
+  }
+
+  &__links {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: $spacing-small 0;
+
+    @include media-query($medium-down) {
+      justify-content: center;
+    }
+
+    nav,
+    .button-wrap {
+      flex: 0 0 auto;
+      margin: $spacing-min;
+    }
+
+    a.button {
+      font-size: $font-size-menu;
+      color: var(--color-text);
+    }
+  }
+}
+
+body.admin-bar {
+  header.banner {
+    top: 32px;
+
+    @include media-query($small) {
+      top: 0;
+    }
+  }
+}

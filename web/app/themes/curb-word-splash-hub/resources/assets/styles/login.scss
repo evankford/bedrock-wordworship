@@ -1,0 +1,13 @@
+body.login {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+
+  div#login h1 a {
+    background-image: url("../images/loginlogo.png");
+    padding-bottom: 19px;
+    width: 270px;
+    max-width: 270px;
+    height: 50px;
+    background-size: 270px;
+  }
+}

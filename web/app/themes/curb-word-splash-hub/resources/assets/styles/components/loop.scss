@@ -1,0 +1,28 @@
+.loop {
+  flex: 1 1 100%;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+  max-width: $grid-max-width;
+  margin: auto;
+  min-height: 400px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  h3.fallback-text {
+    flex: 1 1 100%;
+    margin: auto auto $spacing-min;
+    text-align: center;
+  }
+
+  .post-navigation {
+    flex: 1 1 100%;
+  }
+
+  &.loop--sections {
+    max-width: 100%;
+    display: block;
+  }
+}

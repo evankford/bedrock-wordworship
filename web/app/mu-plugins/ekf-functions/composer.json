@@ -1,0 +1,19 @@
+{
+    "name": "ekf/ekf-functions",
+    "description": "EKF Functionality Creator",
+    "type": "composer-plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Evan Ford",
+            "email": "evankerrickford@gmail.com"
+        }
+    ],
+    "require": {
+        "stoutlogic/acf-builder": "^1.9",
+        "johnbillion/extended-cpts": "^4.3"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

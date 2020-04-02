@@ -1,0 +1,14 @@
+section.release-section.layout--content-over-background {
+  .section-content {
+    min-height: 53vw;
+    padding: 12vw 5vw;
+
+    @include media-query($small) {
+      min-height: 450px;
+    }
+  }
+
+  .section-content__content {
+    max-width: 800px;
+  }
+}

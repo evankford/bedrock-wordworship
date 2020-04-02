@@ -1,0 +1,118 @@
+{
+  "name": "ekf/wordworship",
+  "type": "project",
+  "license": "MIT",
+  "description": "Word Worship Custom Site (build on bedrock)",
+  "homepage": "https://wordworship.com",
+  "authors": [
+    {
+      "name": "Evan Ford",
+      "email": "evankerrickford@gmail.com",
+      "homepage": "https://evankerrickford@gmail.com"
+    }
+  ],
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-muplugin/"
+    },
+   {
+			"type": "composer",
+			"url": "https://satis.ekfapps.com/satispress/"
+		},
+    {
+      "type": "composer",
+      "url": "https://composer.deliciousbrains.com"
+    }
+  ],
+  "require": {
+    "composer/composer": "dev-master",
+    "php": ">=7.1",
+    "composer/installers": "^1.8",
+    "vlucas/phpdotenv": "^4.1.0",
+    "oscarotero/env": "^1.2.0",
+    "roots/wordpress": "5.4",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/disable-comments": "^1.10",
+    "wpackagist-plugin/duplicate-post": "^3.2",
+    "wpackagist-plugin/easy-wp-smtp": "1.3.9.2",
+    "wpackagist-plugin/imsanity": "^2.5",
+    "wpackagist-plugin/query-monitor": "^3.5",
+    "wpackagist-plugin/safe-redirect-manager": "^1.9",
+    "wpackagist-plugin/safe-svg": "^1.9",
+    "wpackagist-plugin/simple-page-ordering": "^2.3",
+    "wpackagist-plugin/stream": "^3.4.3",
+    "wpackagist-plugin/autodescription": "^4.0",
+    "wpackagist-plugin/goodbye-captcha": "^3.1",
+    "wpackagist-plugin/wp-user-profiles": "^2.1",
+    "wpackagist-plugin/wp-optimize": "^3.0",
+    "roots/soil": "^3.9",
+    "samrap/acf-fluent": "^0.4.0",
+    "wpackagist-plugin/restricted-site-access": "^7.2",
+    "johnbillion/extended-cpts": "^4.3",
+    "satispress/admin-columns-pro": "^5.1",
+    "satispress/ac-addon-acf": "^2.5.6",
+    "satispress/ac-addon-ninjaforms": "^1.3.2",
+    "satispress/advanced-custom-fields-component_field": "^2.0.2",
+    "satispress/advanced-custom-fields-pro": "^5.8.9",
+    "satispress/ninja-forms": "3.4.24.1",
+    "satispress/ninja-forms-style": "^3.0",
+    "satispress/ninja-forms-mail-chimp": "^3.1",
+    "satispress/ninja-forms-multi-part": "^3.0",
+    "satispress/ninja-forms-webhooks": "^3.0",
+    "satispress/search-filter-pro": "^2.5",
+    "satispress/ninja-forms-zapier": "^3.0",
+    "satispress/wp-migrate-db-pro": "^1.9",
+    "satispress/wp-migrate-db-pro-cli": "^1.3",
+    "satispress/wp-migrate-db-pro-media-files": "^1.4",
+    "satispress/wp-migrate-db-pro-multisite-tools": "^1.2",
+    "wp-cli/wp-cli": "^2.4",
+    "soberwp/intervention": "^1.2.0",
+    "wpackagist-plugin/webp-express": "^0.17.3",
+    "wpackagist-plugin/ultimate-dashboard": "^2.7",
+    "satispress/wp-bruiser-ninjaforms": "^3.1",
+    "wpackagist-plugin/acf-code-field": "^1.8",
+    "wpackagist-plugin/require-featured-image": "^1.5",
+    "wpackagist-plugin/acf-columns": "^1.2",
+    "wpackagist-plugin/acf-duplicate-repeater": "^2.0",
+    "wpackagist-plugin/acf-autosize": "^2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5.4",
+    "roave/security-advisories": "dev-master"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["roots/soil", "soberwp/intervention", "samrap/acf-fluent", "johnbillion/extended-cpts", "satispress/advanced-custom-fields-pro", "wpackagist-plugin/acf-columns", "satispress/advanced-custom-fields-component_field", "satispress/search-filter-pro",  "type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

@@ -1,0 +1,312 @@
+%button {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  //Sizing
+  padding: 0.7em 1em;
+  margin: $spacing-small 0;
+  //Font
+  @include font-heading;
+
+  font-size: calc(1.4rem + 0.3vw);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  //Style
+  border-radius: $border-radius;
+  background: var(--color-accent);
+  color: var(--color-accent-inverse);
+  overflow: hidden;
+  transition: transform 300ms $ease, opacity 300ms $ease, color 300ms $ease;
+
+  //Remove visited changes
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+  //Before for certain styles
+  &::before {
+    @extend %psuedo;
+
+    position: absolute;
+    top: calc(100% + 2px);
+    height: calc(100% + 4px);
+    // margin: -2px;z
+    z-index: -1;
+    transition: transform 350ms 40ms $ease, opacity 350ms 40ms $ease;
+  }
+}
+
+.button {
+  @extend %button;
+
+  &.simple {
+    padding: 0.65em 0.95em;
+    background: transparent;
+    color: inherit;
+
+    &.white {
+      color: white;
+    }
+  }
+
+  &.big {
+    @include font-extra();
+
+    font-size: calc(1.7rem + 0.5vw);
+  }
+
+  &.small {
+    font-size: 0.9em;
+  }
+
+  &.solid {
+    background: var(--color-accent);
+    color: var(--color-accent-inverse);
+  }
+
+  &.outline,
+  &.border {
+    background: transparent;
+    border: $border-thickness solid currentColor;
+    color: var(--color-body-text);
+  }
+
+  &.inherit {
+    color: inherit;
+    border-color: inherit;
+  }
+}
+
+button.button {
+  @extend %button;
+
+  appearance: none;
+  border: none;
+}
+
+.button-wrap {
+  .button {
+    flex: 0 0 auto;
+    margin: 0.45em;
+  }
+
+  &.center {
+    text-align: center;
+
+    .button {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+form button.simple {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
+body {
+  &.button-font--body {
+    %button {
+      font-family: var(--font-body);
+      font-weight: var(--font-body-weight);
+    }
+  }
+
+  &.button-font--extra {
+    %button {
+      font-family: var(--font-extra);
+      font-weight: var(--font-extra-weight);
+    }
+  }
+
+  &.button--caps {
+    %button {
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+  }
+
+  &.button-style--solid {
+    %button {
+      background: var(--color-accent);
+      color: var(--color-accent-inverse);
+    }
+
+    .button.simple {
+      background: transparent;
+    }
+  }
+
+  &.button-style--underline {
+    %button {
+      background: transparent;
+      color: var(--color-accent);
+
+      &::after {
+        @extend %psuedo;
+
+        height: $border-thickness;
+        bottom: 0;
+        background: var(--color-accent);
+        transition: transform 300ms $ease;
+        top: unset;
+        left: 50%;
+        transform: translateX(-50%) scaleX(1);
+      }
+
+      &:hover {
+        &::after {
+          transform: translateX(-50%) scaleX(0.85);
+        }
+      }
+
+      &.over-dark {
+        color: var(--color-accent-lighter);
+        text-shadow: 0 0 20px rgba(black, 0.85);
+
+        &::after {
+          background: var(--color-accent-lighter);
+        }
+      }
+
+      &:not(.solid) {
+        padding: 0.48em 0.35em;
+      }
+    }
+
+    %button.solid {
+      background: var(--color-accent);
+      color: var(--color-accent-inverse);
+
+      &::after {
+        display: none;
+      }
+
+      &.secondary {
+        background: $color-secondary;
+        color: $color-secondary-inverse;
+      }
+    }
+
+    .button.simple {
+      background: transparent;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &.button-style--gradient {
+    %button {
+      background: linear-gradient(175deg, var(--color-accent-darker), var(--color-accent));
+    }
+
+    .button.simple {
+      background: transparent;
+    }
+  }
+
+  &.button-style--outline {
+    %button {
+      background: transparent;
+      color: var(--color-accent);
+      border: $border-thickness solid currentColor;
+
+      &::before {
+        background: var(--color-accent-inverse);
+      }
+
+      &:hover {
+        color: var(--color-accent);
+
+        &::before {
+          transform: translateY(-101%);
+        }
+      }
+    }
+
+    .overlay-section {
+      %button {
+        color: var(--color-accent-inverse);
+      }
+    }
+
+    .button.lighter {
+      color: var(--color-accent-inverse);
+
+      &:hover {
+        color: var(--color-accent-darkest);
+      }
+
+      &::before {
+        background: var(--color-accent-inverse);
+      }
+    }
+
+    .button.solid {
+      background: var(--color-accent);
+      border: none;
+      color: var(--color-accent-inverse);
+    }
+
+    .button.simple {
+      background: transparent;
+      border: none;
+    }
+  }
+
+  &.button-style--minimal {
+    %button {
+      background: transparent;
+      color: var(--color-accent);
+
+      &::before {
+        background: var(--color-accent);
+      }
+
+      &:hover {
+        color: var(--color-accent-inverse);
+
+        &::before {
+          transform: translateY(-101%);
+        }
+      }
+    }
+
+    .overlay-section {
+      %button {
+        color: var(--color-accent-inverse);
+      }
+    }
+
+    .button.lighter {
+      color: var(--color-accent-inverse);
+
+      &:hover {
+        color: var(--color-accent-darkest);
+      }
+
+      &::before {
+        background: var(--color-accent-inverse);
+      }
+    }
+
+    .button.solid {
+      background: var(--color-accent);
+      border: none;
+      color: var(--color-accent-inverse);
+    }
+
+    .button.simple {
+      background: transparent;
+      border: none;
+    }
+  }
+}
