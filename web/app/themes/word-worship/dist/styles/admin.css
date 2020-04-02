@@ -1,0 +1,235 @@
+/* line 7, stdin */
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  background: transparent;
+}
+
+/* line 14, stdin */
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu .current div.wp-menu-image::before,
+#adminmenu a.current:hover div.wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu.opensub div.wp-menu-image::before,
+#adminmenu a.wp-has-current-submenu:hover div.wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu a:focus div.wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu:hover div.wp-menu-image::before,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 20, stdin */
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head .wp-menu-name,
+#adminmenu .wp-menu-arrow div .wp-menu-name,
+#adminmenu li.current a.menu-top .wp-menu-name,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-name,
+#adminmenu .current div.wp-menu-image::before .wp-menu-name,
+#adminmenu a.current:hover div.wp-menu-image::before .wp-menu-name,
+#adminmenu li.wp-has-current-submenu.opensub div.wp-menu-image::before .wp-menu-name,
+#adminmenu a.wp-has-current-submenu:hover div.wp-menu-image::before .wp-menu-name,
+#adminmenu li.wp-has-current-submenu a:focus div.wp-menu-image::before .wp-menu-name,
+#adminmenu li.wp-has-current-submenu:hover div.wp-menu-image::before .wp-menu-name,
+.folded #adminmenu li.current.menu-top .wp-menu-name,
+.folded #adminmenu li.wp-has-current-submenu .wp-menu-name {
+  font-weight: normal;
+}
+
+/* line 25, stdin */
+
+.folded #adminmenu .wp-has-current-submenu .wp-submenu,
+.folded #adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
+#adminmenu .wp-submenu {
+  background: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 30, stdin */
+
+#adminmenu {
+  padding: calc(12px + 1vw);
+}
+
+/* line 58, stdin */
+
+#adminmenu .wp-submenu {
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  padding: 9px 0 6px;
+  margin: 0 0 10px;
+}
+
+/* line 65, stdin */
+
+#adminmenu .wp-submenu li a {
+  color: #3f3f3f;
+  font-weight: normal;
+}
+
+/* line 69, stdin */
+
+#adminmenu .wp-submenu li a:focus,
+#adminmenu .wp-submenu li a:hover {
+  color: #008ed2;
+}
+
+/* line 75, stdin */
+
+#adminmenu .wp-submenu .current li a {
+  color: #1f1f1f;
+  font-weight: bold;
+}
+
+/* line 79, stdin */
+
+#adminmenu .wp-submenu .current li a:hover {
+  font-weight: bold;
+  color: #008ed2;
+}
+
+/* line 86, stdin */
+
+#adminmenu a,
+#adminmenu div.wp-menu-image::before {
+  color: #3f3f3f;
+}
+
+/* line 91, stdin */
+
+#adminmenu a[class*=menu-icon] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+/* line 97, stdin */
+
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+  background: transparent;
+}
+
+/* line 102, stdin */
+
+#adminmenu li.menu-top:hover > a,
+#adminmenu li.opensub > a.menu-top > a,
+#adminmenu li > a.menu-top:focus > a {
+  color: #008ed2;
+}
+
+/* line 108, stdin */
+
+#adminmenu li.menu-top a:focus,
+#adminmenu li.menu-top a:hover {
+  color: #008ed2;
+}
+
+/* line 114, stdin */
+
+#adminmenu .wp-has-current-submenu .wp-submenu {
+  background: transparent;
+}
+
+/* line 117, stdin */
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {
+  padding-top: 4px;
+  margin: 0 0 2px;
+}
+
+/* line 123, stdin */
+
+#adminmenu .opensub .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a {
+  color: #1f1f1f;
+}
+
+/* line 133, stdin */
+
+#adminmenu li.wp-has-submenu::after {
+  display: none !important;
+}
+
+/* line 138, stdin */
+
+#adminmenu .wp-submenu .wp-submenu-head {
+  color: #1f1f1f;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
+/* line 144, stdin */
+
+#adminmenu .wp-menu-image::before {
+  font-weight: 400 !important;
+}
+
+/* line 149, stdin */
+
+.wrap {
+  padding: calc(12px + 2vmin);
+  color: #3f3f3f;
+}
+
+/* line 153, stdin */
+
+.wrap h1 {
+  font-size: calc(20px + 1vmin);
+  color: #1f1f1f;
+}
+
+/* line 158, stdin */
+
+.wrap h2 {
+  font-size: calc(16px + 0.75vmin);
+}
+
+/* line 162, stdin */
+
+.wrap h3 {
+  font-size: calc(14px + 0.5vmin);
+}
+
+/* line 167, stdin */
+
+#dashboard-widgets .meta-box-sortables {
+  margin: 5px 11px;
+  min-height: 100px;
+}
+
+/* line 172, stdin */
+
+#wpcontent,
+#wpfooter {
+  margin-left: 200px;
+}
+
+/* line 177, stdin */
+
+.wp-has-current-submenu ul {
+  background: transparent !important;
+}
+
+
+/*# sourceMappingURL=admin.css.map*/

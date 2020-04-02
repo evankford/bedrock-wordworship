@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c89cad8aa3bb4e33b08eb1f23065f9e",
+    "content-hash": "c76c6b6fcb705647acd04ca9a434963e",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2439,6 +2439,24 @@
             "homepage": "https://wordpress.org/plugins/goodbye-captcha/"
         },
         {
+            "name": "wpackagist-plugin/header-footer-code-manager",
+            "version": "1.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/header-footer-code-manager/",
+                "reference": "tags/1.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/header-footer-code-manager.1.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/header-footer-code-manager/"
+        },
+        {
             "name": "wpackagist-plugin/imsanity",
             "version": "2.6.0",
             "source": {
@@ -2473,6 +2491,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/query-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/relevanssi",
+            "version": "4.7.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/relevanssi/",
+                "reference": "tags/4.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.7.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/relevanssi/"
         },
         {
             "name": "wpackagist-plugin/require-featured-image",

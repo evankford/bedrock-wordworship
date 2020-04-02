@@ -1,16 +1,9 @@
 {
-  "name": "sage",
+  "name": "wordworship",
   "version": "9.0.9",
-  "author": "Roots <team@roots.io>",
-  "homepage": "https://roots.io/sage/",
+  "author": "EKF",
+  "homepage": "https://wordworship.com",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/roots/sage.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
   "licenses": [
     {
       "type": "MIT",

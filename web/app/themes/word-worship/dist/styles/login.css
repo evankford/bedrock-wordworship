@@ -1,0 +1,20 @@
+/* line 1, stdin */
+
+body.login {
+  background-image: url(/app/themes/word-worship-site/dist/images/bg.jpg);
+  background-size: cover;
+}
+
+/* line 5, stdin */
+
+body.login div#login h1 a {
+  background-image: url(/app/themes/word-worship-site/dist/images/loginlogo.png);
+  padding-bottom: 19px;
+  width: 270px;
+  max-width: 270px;
+  height: 50px;
+  background-size: 270px;
+}
+
+
+/*# sourceMappingURL=login.css.map*/

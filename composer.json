@@ -87,7 +87,9 @@
     "wpackagist-plugin/require-featured-image": "^1.5",
     "wpackagist-plugin/acf-columns": "^1.2",
     "wpackagist-plugin/acf-duplicate-repeater": "^2.0",
-    "wpackagist-plugin/acf-autosize": "^2.0"
+    "wpackagist-plugin/acf-autosize": "^2.0",
+    "wpackagist-plugin/relevanssi": "^4.7.2",
+    "wpackagist-plugin/header-footer-code-manager": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5.4",

@@ -14,8 +14,8 @@
       "./styles/admin.scss"
     ]
   },
-  "publicPath": "/app/themes/curb-word-splash-hub",
-  "devUrl": "https://curb-word-splash-hub.local",
+  "publicPath": "/app/themes/word-worship-site",
+  "devUrl": "https://word-worship-site.local",
   "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
